@@ -1,0 +1,79 @@
+.main-nav{
+    display: grid;
+    grid-template-areas: 
+    "logo menu menu";
+    background: var(--light);
+    font-size: .93rem;
+    grid-gap: 6px;
+}
+.main-nav .hlogo{
+    grid-area: logo;
+    align-self: start;
+}
+.main-nav .menu{
+    grid-area: menu;
+    align-self: center;
+}
+.main-nav .menu ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+    padding: 0;
+    margin: 0;
+    justify-items: center;
+    align-items: center;
+}
+.nav-item a{
+    color: var(--dark);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.hlogo{
+    grid-area: hlogo;
+    align-self: end;
+    justify-self: center;
+}
+.hlogo img{
+    width: 45px;
+    border-radius: 50%;
+    padding: 6px;
+}
+.active{
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid green;
+}
+.nav-link:hover{
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid green;
+}
+
+.nav-link:hover::after{
+    padding-bottom: 1rem;
+    border-bottom: 2px solid green;
+}
+
+@media(min-width:700px){
+    .menu {
+        justify-self: end;
+    }
+    .main-nav {
+        padding-right: 9rem;
+    }
+    .main-nav .hlogo {
+        justify-self: start;
+        padding-left: 3rem;
+    }
+    .nav-item a{
+        font-size: larger;
+        font-weight: bolder;
+    }
+}
+@media(min-width: 810px){
+    .main-nav .hlogo img {
+        width: 45px;
+        border-radius: 50%;
+        padding: 5px;
+        border: 2px solid #0c570c;
+    }
+}

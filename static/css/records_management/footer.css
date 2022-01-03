@@ -1,0 +1,10 @@
+.ftr-socials ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+.ftr-socials ul li{
+    padding: 0.5rem;
+}
