@@ -1,1 +1,5 @@
 .divio
+*.pyc
+
+
+docker-compose-windows.yml
