@@ -3,6 +3,8 @@
     align-items: center;
     justify-content: center;
     color: var(--text-white);
+    position: relative;
+    top: -1rem;
 }
 .transfer-header a {
     color: var(--text-white);
@@ -13,9 +15,11 @@
 
 form {
     display: grid;
-    gap: .5rem;
+    gap: .3rem;
     margin: 0 8px;
     margin-bottom: 6rem;
+    position: relative;
+    top: -5rem;
 }
 label {
     color: #fff;
