@@ -6,7 +6,7 @@ import aldryn_addons.urls
 
 
 urlpatterns = [
-    path("", include("records_management.urls")),
+    path('', include('mainbank.urls')),
     # add your own patterns here
 ] + aldryn_addons.urls.patterns() + i18n_patterns(
     # add your own i18n patterns here

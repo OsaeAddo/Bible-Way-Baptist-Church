@@ -43,10 +43,12 @@ aldryn_addons.settings.load(locals())
 # for guidance on managing these settings.
 
 INSTALLED_APPS.extend([
-    "records_management.apps.RecordsManagementConfig"
+    "mainbank.apps.MainbankConfig",
     # Extend the INSTALLED_APPS setting by listing additional applications here
 ])
 
 # To see the settings that have been applied, use the Django diffsettings 
 # management command. 
 # See https://docs.divio.com/en/latest/how-to/configure-settings.html#list
+LOGOUT_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "dashboard"
