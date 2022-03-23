@@ -1,0 +1,38 @@
+.goldcard {
+    display: none;
+    margin-top: 2rem;
+    background: var(--text-white);
+    color: var(--text-black1);
+    padding: 0.5rem 0.4rem;
+    border-radius: 8px;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    font-weight: 600;
+}
+.goldcard p {
+    font-size: 15px;
+    text-align: center;
+}
+.popup {
+    display: none;
+    justify-content: space-evenly;
+    width: 185px;
+    background: var(--text-white);
+    color: var(--primary);
+    padding: 2rem;
+    opacity: 1;
+    transition: opacity 1s;
+    transform: translateX(4rem) translatey(3rem);
+}
+.popup p {
+    font-size: 18px;
+    font-weight: 600;
+}
+#close {
+    color: var(--text-black1);
+    position: relative;
+    top: -1.7rem;
+    right: -2rem;
+    border: none;
+    font-size: 21px;
+}

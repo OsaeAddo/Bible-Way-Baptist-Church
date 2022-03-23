@@ -1,0 +1,72 @@
+.transactions-header {
+    text-align: start;
+    margin-left: 8px;
+    color: lightgray;
+    margin-bottom: 4rem;
+}
+.total {
+    display: grid;
+    grid-template-columns: 1fr .1fr 1fr;
+    margin: 1rem 0;
+    justify-items: center;
+    letter-spacing: .3px;
+}
+.vr{
+    border-right: 2px solid gray;
+    margin-right: 4px;
+}
+.total .in,
+.total .out {
+    padding: 8px;
+    color: var(--text-white);
+}
+.total .header{
+    color: gray;
+    font-size: 14px;
+    text-align: center;
+}
+
+.transactions-container {
+    background: var(--text-white);
+    padding: 5px 12px;
+    border-radius: 3px;
+    margin: 9px 0;
+}
+.transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 13px;
+    letter-spacing: .3px;
+}
+.transaction-title {
+    font-weight: 600;
+    color: #000;
+}
+.transaction-date {
+    color: #000;
+}
+.transaction-amount {
+    color: green;
+}
+.transaction i {
+    color: gray;
+}
+.transaction-details-container {
+    display: none;
+    background: lightgray;
+    padding: 3px 8px;
+    grid-template-columns: .1fr 1fr;
+    margin: 12px 5px;
+    font-size: 14px;
+}
+.transaction-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+
+#up-arrow {
+    display: none;
+}

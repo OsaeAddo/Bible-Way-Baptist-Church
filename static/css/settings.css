@@ -1,0 +1,25 @@
+.settings-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-white);
+}
+.settings-header i {
+    color: var(--text-white);
+}
+.settings-header h3 {
+    text-align: center;
+    margin-left: 2rem;
+}
+.profile-container {
+    margin-top: 2rem;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.profile-popup-trigger {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px 8px;
+    font-size: 14px;
+}

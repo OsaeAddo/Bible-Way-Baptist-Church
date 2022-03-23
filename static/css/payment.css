@@ -1,0 +1,21 @@
+.cable-popup,
+.utility-popup,
+.payment-history-popup {
+    display: none;
+}
+h2 {
+    color: var(--text-white);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.payment-options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+.payment-option {
+    background: var(--text-white);
+    border-radius: 5px;
+    padding: 5px 12px;
+    text-align: center;
+}

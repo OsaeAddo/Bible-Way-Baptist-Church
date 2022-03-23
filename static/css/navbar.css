@@ -1,0 +1,47 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+header {
+    margin: 0;
+    padding: 1rem 0;
+    color: var(--text-white);
+    background: var(--primary);
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+.nav button {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    padding: .25rem;
+}
+.nav button i {
+    font-size: 1.3rem;
+}
+.nav .welcome p {
+    font-size: 10px;
+    margin-top: 6px;
+    color: lightgray;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+.logout {
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: var(--text-white);
+    background-color: var(--text-black1);
+    font-size: 17px;
+}
+.fa-sign-out-alt {
+    padding-left: 4px;
+}

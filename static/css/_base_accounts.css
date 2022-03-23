@@ -1,0 +1,10 @@
+:root {
+    --primary: #42145f;
+    --text-background: #1d7b8a;
+    --text-background2: #009fac;
+    --text-black: #333;
+    --text-white: #fff;
+}
+body {
+    scroll-behavior: smooth;
+}

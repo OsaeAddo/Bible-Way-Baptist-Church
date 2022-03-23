@@ -1,0 +1,28 @@
+h2 {
+    color: var(--text-white);
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+.popup {
+    display: none;
+    justify-content: space-evenly;
+    width: 185px;
+    background: var(--text-white);
+    padding: 2rem;
+    opacity: 1;
+    transition: opacity 1s;
+    transform: translateX(4rem) translatey(3rem);
+}
+.popup p {
+    font-size: 17px;
+}
+#close {
+    position: relative;
+    top: 2.7rem;
+    right: -1.5rem;
+    border: none;
+    font-size: 14px;
+    color: green;
+    height: 23px;
+    background: lightgray;
+}

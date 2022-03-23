@@ -1,0 +1,55 @@
+.notifications-header {
+    color: var(--text-white);
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 4rem;
+}
+.notifications-container {
+    margin-bottom: 4px;
+    padding-bottom: 3px;
+    background: var(--text-white);
+    border-radius: 3px;
+}
+.notifications-container h1 {
+    color: var(--text-white);
+    text-align: center;
+}
+.notifications {
+    display: flex;
+    font-size: 16px;
+    color: var(--text-black1);
+    padding: 7px 12px;
+    justify-content: space-between;
+    width: 228px;
+    transform: translate(42px, 3px);
+}
+.notifications p {
+    color: gray;
+}
+#up-arrow {
+    display: none;
+}
+
+.transaction-details-container {
+    display: none;
+    background: lightgray;
+    padding: 3px 8px;
+    grid-template-columns: .1fr 1fr;
+    margin: 12px 5px;
+    font-size: 14px;
+}
+.transaction-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.account-added {
+    font-size: 16px;
+    color: gray;
+    padding: 7px 12px;
+    background: #fff;
+    margin-top: 1rem;
+    transform: translate(0px, 10px);
+    border-radius: 3px; 
+}
