@@ -1,0 +1,24 @@
+{% extends "mainbank/_base_dashboard.html" %}
+{% load static %} 
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/deposit_check.css' %}">
+{% endblock extracss %}
+
+{% block title %}<title>Deposit Check - NatWest Online</title>{% endblock title %}
+
+
+{% block content %}
+    <main  style="height: 100vh;">
+        <h2>Deposit Check</h2>
+        <div class="popup">
+            <p>
+                You have no Deposit Check yet
+            </p>
+            <button id="close">Ok</button>
+        </div>
+    </main>
+{% endblock content %}
+{% block extrajs %}
+<script src="{% static 'js/goldCardPopup.js' %}"></script>
+{% endblock extrajs %}

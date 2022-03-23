@@ -1,0 +1,28 @@
+{% extends "mainbank/_base_dashboard.html" %}
+{% load static %} 
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/settings.css' %}">
+{% endblock extracss %}
+
+{% block title %}<title>Transactions- NatWest Online</title>{% endblock title %}
+
+
+{% block content %}
+    <main style="height: 100vh;">
+        <div class="settings-header">
+            <a href="{% url 'dashboard' %}"><i class="fas fa-arrow-left"></i></a>
+            
+            <h3>Settings</h3>
+        </div>
+        <section class="profile-container">
+            <div class="profile-popup-trigger">
+                <p>Update Profile</p>
+                <i class="fas fa-angle-right"></i>
+            </div>
+        </section>
+    </main>
+{% endblock content %}
+{% block extrajs %}
+<script src="{% static 'js/transaction-popup.js' %}"></script>
+{% endblock extrajs %}

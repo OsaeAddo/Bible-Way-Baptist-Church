@@ -1,0 +1,29 @@
+{% extends "mainbank/_base_dashboard.html" %}
+{% load static %} 
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/transfer_pending.css' %}">
+{% endblock extracss %}
+
+{% block title %}<title>Gold Card -NatWest Online</title>{% endblock title %}
+
+
+{% block content %}
+    <main  style="height: 100vh;">
+        <div class="pending-card">
+            <p>Kindly contact our Customer Care <br>to complete your transfer.</p>
+            <p>Thank you.</p>
+        </div>
+        <div class="popup">
+            <button id="close">&times;</button>
+            <div class="popup-text">
+                <p id="processing">Transfer Status: Processing</p>
+                <p id="customer-care">Kindly contact our Customer Care <br>to complete your transfer</p>
+            </div>
+            <button id="ok">Ok</button>
+        </div>
+    </main>
+{% endblock content %}
+{% block extrajs %}
+<script src="{% static 'js/transfer_pending.js' %}"></script>
+{% endblock extrajs %}

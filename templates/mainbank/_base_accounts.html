@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block extracss %}{% endblock extracss %}
+    <link rel="stylesheet" href="{% static 'css/navbar_main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    {% block title %}{% endblock title %}
+</head>
+<body>
+    {% include 'mainbank/navbar_main.html' %}
+    {% block content %}{% endblock content %}
+    
+    <script src="{% static 'js/active-link.js' %}"></script>
+    <script src="{% static 'js/error-engine.js' %}"></script>
+    <script src="{% static 'js/togglePassword.js' %}"></script>
+    <script src="{% static 'js/toggleMenu.js' %}"></script>
+    {% block extras %}{% endblock extras %}
+</body>
+</html>

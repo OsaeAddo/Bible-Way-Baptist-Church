@@ -1,0 +1,87 @@
+{% extends "mainbank/_base_accounts.html" %}
+{% load static %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock extracss %}
+{% block title %} <title>Login -NatWest Online - Bank Accounts, Mortgages, Loans and Savings </title>{% endblock title %}
+
+
+{% block content %}
+<main>
+  <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div>
+          <!-- Firstname section -->
+          <label for="{{ form.first_name.id_for_label }}">Firstname</label>
+          <input 
+            id="{{form.first_name.id_for_label}}" type="text" 
+            name="first_name" 
+            placeholder="enter your firstname"
+            autofocus
+            autocapitalize="none"
+            autocomplete="firstname"
+          >
+
+          <!-- Lastname section -->
+          <label for="{{ form.last_name.id_for_label }}">Lastname</label>
+          <input 
+            id="{{form.last_name.id_for_label}}" type="text" 
+            name="last_name" 
+            placeholder="enter your lastname"
+            autofocus
+            autocapitalize="none"
+            autocomplete="last_name"
+          >
+
+          <!-- Email section -->
+          <label for="{{ form.email.id_for_label }}">Email</label>
+          <input 
+            id="{{form.email.id_for_label}}" type="email" 
+            name="email" placeholder="enter email"
+            autofocus
+            autocapitalize="none"
+            autocomplete="email"
+          >
+
+
+          <!-- Mobile section -->
+          <label for="{{ customerForm.mobile.id_for_label }}">Mobile</label>
+          <input 
+            id="{{customerForm.mobile.id_for_label}}" type="tel" 
+            name="mobile" 
+            placeholder="enter mobile"
+            autofocus
+            autocapitalize="none"
+            autocomplete="mobile"
+          >
+
+          <!-- Username section -->
+          <label for="{{ form.username.id_for_label }}">Username</label>
+          <input 
+            id="{{form.username.id_for_label}}" type="text" 
+            name="username" 
+            placeholder="enter username"
+            autofocus
+            autocapitalize="none"
+            autocomplete="username"
+          >
+
+
+          <!-- Password section -->
+          <label class="" for="{{form.password.id_for_label}}">Password</label>
+          <input type="password" 
+          id="{{form.password.id_for_label}}" 
+           name="{{form.password.name}}" 
+           autofocus
+           autocapitalize="none"
+           autocomplete="current-password"
+           required
+           placeholder="Password here"
+          >
+      </div>
+
+      <button id="btn" type="submit">Submit</button>
+  </form>
+</main>
+{% endblock content %}

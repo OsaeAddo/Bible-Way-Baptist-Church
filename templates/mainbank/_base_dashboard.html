@@ -1,0 +1,103 @@
+{% load static %} 
+<!DOCTYPE html>
+<html x-data="data()" lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/_base_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    {% block extracss %}{% endblock extracss %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    {% block title %}{% endblock title %}
+</head>
+<body :class="{ 'overflow-hidden': isSideMenuOpen }" style="height: 100vh;">
+    <header>
+        {% block navbar %}
+        {% include 'mainbank/navbar.html' %}
+        {% endblock navbar %}
+    </header>
+    <!-- Mobile sidebar -->
+    <!-- Backdrop -->
+    <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="backdrop"></div>
+    <aside class="aside"
+        x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+        x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0 transform -translate-x-20" @click.away="closeSideMenu"
+        @keydown.escape="closeSideMenu">
+        <div class="natwest-text-container">
+          <img src="{% static 'images/natwest-logo1.png' %}" alt="Natwest logo">
+          <div class="natwest-text">
+            <div>Natwest Banking</div>
+            <div>Group LLC</div>
+          </div>
+        </div>
+        <div class="user-details-container">
+          <img src="{{customer.profile_pic.url}}" alt="profilepic">
+          <div class="user-details-text">
+            <div class="username flex-1">{{customer.user.username}}</div>
+            <div class="user-role text-xs">09/ 03/ 22</div>
+          </div>
+        </div>
+        <ul class="menu-list flex flex-col justify-center text-lg mb-0 pb-0 font-semibold">
+          <li class="my-8 md:my-6 w-full">
+            <a class="flex items-center ml-8" href="{% url 'account' %}">
+              <i class="fas fa-id-badge"></i>
+              <span class="flex justify-center ml-7">Account</span>
+            </a>
+          </li>
+          <li class="my-8 md:my-6 w-full">
+            <a class="flex items-center ml-8" href="/dashboard">
+              <i class="fas fa-home"></i>
+              <span class="flex justify-center ml-7">Dashboard</span>
+            </a>
+          </li>
+          <li class="my-8 md:my-6 w-full">
+            <a class="flex items-center ml-8" href="{% url 'history' %}">
+              <i class="fas fa-clipboard"></i>
+              <span class="flex justify-center ml-6">History</span>
+            </a>
+          </li>
+          <li class="my-8 md:my-6 w-full">
+            <a class="flex items-center ml-8" href="{% url 'messages' %}">
+              <i class="fas fa-envelope"></i>
+              <span class="flex justify-center ml-7">Messages</span>
+            </a>
+          </li>
+          <li class="my-8 md:my-6 w-full">
+            <a class="flex items-center ml-8" href="{% url 'transactions' %}">
+              <i class="fas fa-address-card"></i>
+              <span class="flex justify-center ml-5">Transactions</span>
+            </a>
+          </li>
+          <li class="mt-4 w-full">
+            <a href="{% url 'settings' %}" class="flex items-center ml-8">
+              <i class="fas fa-cog"></i>
+              <span class="flex justify-center ml-5">Settings</span>
+            </a>
+          </li>
+        </ul>
+    </aside>
+
+    {% block content %}{% endblock content %}
+
+    <footer>
+        {% block footer %}
+            {% include 'mainbank/footer.html' %}
+        {% endblock footer %}
+    </footer>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="{% static 'js/toggle-sidemenu.js' %}"></script>
+    <script src="{% static 'js/webdate.js' %}"></script>
+    {% block extrajs %}{% endblock extrajs %}
+</body>
+</html>

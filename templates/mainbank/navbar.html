@@ -1,0 +1,10 @@
+<div class="nav">
+    <button @click="toggleSideMenu"
+    aria-label="Menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <span class="welcome" style="font-size: 15px;">NatWest Dashboard</span>
+    <a href="{% url 'logout' %}">
+        <span class="rounded-full py-0.5 px-3 bg-gray-900 logout">Logout <i class="fas fa-sign-out-alt pl-1"></i></span>
+    </a>
+</div>

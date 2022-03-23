@@ -1,0 +1,70 @@
+{% extends "mainbank/_base_dashboard.html" %}
+{% load static %} 
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/history.css' %}">
+
+{% endblock extracss %}
+
+{% block title %}<title>History- NatWest Online</title>{% endblock title %}
+
+
+{% block content %}
+    <main style="height: 100vh;">
+        <h1 class="notifications-header">History</h1>
+        <section class="notifications-container">
+            <div class="notifications transaction">
+                <p><i class="fas fa-bell"></i> You deposited &pound1000 successfully...</p>
+                <i class="fas fa-chevron-down" id="down-arrow"></i>
+                <i class="fas fa-chevron-up" id="up-arrow"></i>
+            </div>
+            <div class="transaction-details-container">
+                <div class="vr"></div>
+                <div class="transaction-details">
+                    <div class="transaction-details-headers">
+                        <div class="transaction-id">
+                            Txn ID:
+                        </div>
+                        <div class="transaction-time">Time: </div>
+                        <div class="transaction-status">Status:</div>
+                    </div>
+                    <div class="transaction-details-values">
+                        <div>1459368411518</div>
+                        <div class="time-value">11:45:51</div>
+                        <div class="status-value">SUCCESSFUL</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="notifications-container">
+            <div class="notifications transaction">
+                <p><i class="fas fa-bell"></i> Initial deposit successful...</p>
+                <i class="fas fa-chevron-down" id="down-arrow"></i>
+                <i class="fas fa-chevron-up" id="up-arrow"></i>
+            </div>
+            <div class="transaction-details-container">
+                <div class="vr"></div>
+                <div class="transaction-details">
+                    <div class="transaction-details-headers">
+                        <div class="transaction-id">
+                            Txn ID:
+                        </div>
+                        <div class="transaction-time">Time: </div>
+                        <div class="transaction-status">Status:</div>
+                    </div>
+                    <div class="transaction-details-values">
+                        <div>145968911598</div>
+                        <div class="time-value">18:25:32</div>
+                        <div class="status-value">SUCCESSFUL</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="account-added">
+            <p><i class="fas fa-bell"></i> Your acc ***-39 was successfully created!</p>
+        </div>
+    </main>
+{% endblock content %}
+{% block extrajs %}
+<script src="{% static 'js/transaction-popup.js' %}"></script>
+{% endblock extrajs %}

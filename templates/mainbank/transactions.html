@@ -1,0 +1,81 @@
+{% extends "mainbank/_base_dashboard.html" %}
+{% load static %} 
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/transactions.css' %}">
+{% endblock extracss %}
+
+{% block title %}<title>Transactions- NatWest Online</title>{% endblock title %}
+
+
+{% block content %}
+    <main style="height: 100vh;">
+        <h4 class="transactions-header">Last 10 transactions</h4>
+        <div class="total">
+            <div class="in">
+                <p class="header">Total In</p>
+                <p>&pound 1,500.00</p>
+            </div>
+            <div class="vr"></div>
+            <div class="out">
+                <p class="header">Total Out</p>
+                <p>&pound 0.00</p>
+            </div>
+        </div>
+        <section class="transactions-container">
+            <div class="transaction">
+                <div class="transaction-title">Deposit</div>
+                <div class="transaction-date">15/03/2022</div>
+                <div class="transaction-amount">+&pound1000.00</div>
+                <i class="fas fa-chevron-down" id="down-arrow"></i>
+                <i class="fas fa-chevron-up" id="up-arrow"></i>
+            </div>
+            <div class="transaction-details-container">
+                <div class="vr"></div>
+                <div class="transaction-details">
+                    <div class="transaction-details-headers">
+                        <div class="transaction-id">
+                            Txn ID:
+                        </div>
+                        <div class="transaction-time">Time: </div>
+                        <div class="transaction-status">Status:</div>
+                    </div>
+                    <div class="transaction-details-values">
+                        <div>1459368411518</div>
+                        <div class="time-value">11:45:51</div>
+                        <div class="status-value">SUCCESSFUL</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="transactions-container">
+            <div class="transaction">
+                <div class="transaction-title">Deposit</div>
+                <div class="transaction-date">09/03/2022</div>
+                <div class="transaction-amount">+&pound500.00</div>
+                <i class="fas fa-chevron-down" id="down-arrow"></i>
+                <i class="fas fa-chevron-up" id="up-arrow"></i>
+            </div>
+            <div class="transaction-details-container">
+                <div class="vr"></div>
+                <div class="transaction-details">
+                    <div class="transaction-details-headers">
+                        <div class="transaction-id">
+                            Txn ID:
+                        </div>
+                        <div class="transaction-time">Time: </div>
+                        <div class="transaction-status">Status:</div>
+                    </div>
+                    <div class="transaction-details-values">
+                        <div>145968911598</div>
+                        <div class="time-value">18:25:32</div>
+                        <div class="status-value">SUCCESSFUL</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}
+{% block extrajs %}
+<script src="{% static 'js/transaction-popup.js' %}"></script>
+{% endblock extrajs %}

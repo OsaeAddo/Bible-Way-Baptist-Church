@@ -1,0 +1,82 @@
+{% extends "mainbank/_base_dashboard.html" %}
+{% load static %} 
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/transfer.css' %}">
+
+{% endblock extracss %}
+
+{% block title %}<title>Transfer -NatWest Online</title>{% endblock title %}
+
+
+{% block content %}
+    <main  style="min-height: 100vh;">
+        <div class="transfer-header">
+            <a href="{% url 'dashboard' %}"><i class="fas fa-arrow-left"></i></a>
+            <h2>Transfer</h2>
+        </div>
+        <div class="">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="transfer-type-container">
+                    <label for="transfer-type">Transfer Type</label>
+                    <select name="transfer-type" class="transfer-type">
+                        <option value="">Transfer to NatWest A/C</option>
+                        <option value="bank-transfer" name="other-bank" class="other-bank">Transfer to Other Banks(INSTANT)</option>
+                        <option value="bank-transfer" name="other-bank" class="other-bank">Transfer to Other Banks(ACH)</option>
+                    </select>
+                </div>
+
+                <div class="from-account-container">
+                    <label for="from-account">Select an account to debit</label>
+                    <select name="from-account" class="from-account" aria-placeholder="select an account to debit">
+                        <option value="">Select an account to debit</option>
+                        <option value="319 - 268 - 19" selected>Acc # (319 - 268 - 19)</option>
+                    </select>
+                </div>
+
+                <div class="bank-container">
+                    <label for="bank-name">Select Recipient Bank</label>
+                    <select name="bank-name" class="bank-name">
+                        <option value="">Lloyds Banking Group</option>
+                        <option value="">Barclays Bank</option>
+                        <option value="">HSBC Holdings</option>
+                        <option value="">Standard Chartered PLC</option>
+                        <option value="">Santander UK</option>
+                    </select>
+                </div>
+
+                <!-- For inputing acct # of a natwest acc -->
+                <div class="to-account-container">
+                    <label for="to-account">To Account</label>
+                    <input type="number" name="to-account" id="to-own-acct" placeholder="enter recipient account number">
+                </div>
+
+                <div class="to-account-container">
+                    <label for="to-account">Routing number</label>
+                    <input type="number" name="to-account" id="to-own-acct" placeholder="enter routing number">
+                </div>
+
+                <div class="amount-container">
+                    <label for="amount">Amount</label>
+                    <input type="number" name="amount" id="utility-amount" placeholder="Amount">
+                </div>
+
+                <textarea name="" id="remarks" cols="30" rows="5" placeholder="Remarks"></textarea>
+
+                <button class="continue" type="button">Continue</button>
+                <div class="popup-confirmation">
+                    <div class="confirmation-message">
+                        <span class="close-button">&times;</span>
+                        <p>Do you want to continue the transfer?</p>
+                        <a href="{% url 'transfer-pending' %}"><button type="button" class="ok">Ok</button></a>
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+{% endblock content %}
+{% block extrajs %}
+<script src="{% static 'js/transfer.js' %}"></script>
+{% endblock extrajs %}

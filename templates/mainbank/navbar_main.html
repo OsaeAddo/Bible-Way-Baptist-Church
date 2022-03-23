@@ -1,0 +1,39 @@
+{% load static %}
+<header>
+    <a class="login" href="{% url 'login' %}">
+        <i class="fas fa-lock"></i>
+        <p>Login</p>
+    </a>
+    <a href="{% url 'home' %}" class="natwest-logo">
+        <img src="{% static 'images/natwest-logo.png' %}" alt="Natwest logo">
+    </a>
+    <button aria-label="Menu" onclick="openNav()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="myNav" class="overlay">
+        <div class="overlay-content">
+            <div class="nav-tab-container">
+                <ul>
+                    <li>Personal</li>
+                    <li>Premiere</li>
+                    <li>Business</li>
+                </ul>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+            <div class="nav-links-container">
+                <a href="{% url 'home' %}">Products</a>
+                <a href="{% url 'home' %}" onclick="closeNav()">Help and support</a>
+                <a href="{% url 'home' %}" onclick="closeNav()">You and money</a>
+                <a href="{% url 'home' %}" onclick="closeNav()">Banking with us</a>
+                <a href="{% url 'home' %}" onclick="closeNav()">Corona virus</a>
+            </div>
+            <div class="login2">
+                <a href="{% url 'login' %}">
+                    <i class="fas fa-lock"></i>
+                    <p>Login</p>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,93 @@
+{% extends "mainbank/_base_accounts.html" %}
+{% load static %}
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock extracss %}
+{% block title %} <title> Login - NatWest Online - Bank Accounts, Mortgages, Loans and Savings </title>{% endblock title %}
+
+
+{% block content %}
+  <div class="container-main">
+    <div class="content">
+      <div class="image">
+        <img src="{% static 'images/acct.svg' %}" alt="">
+      </div>
+      <div class="text">
+          Access more features<br>
+          by logging in below
+      </div>
+    </div>
+    <div class="forms-section">
+      <div class="social">
+        <div class="question">
+            Don't Have an Account?<br>
+            <a href="{% url 'signup' %}"><button>Signup here</button></a>
+        </div>
+      </div>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+          <!-- Username section -->
+          <label for="{{ form.username.id_for_label }}">Username</label>
+          <i class="fas fa-user"></i>
+          <input 
+            id="{{form.username.id_for_label}}" type="text" 
+            name="username" placeholder="enter username"
+            autofocus
+            autocapitalize="none"
+            autocomplete="username"
+          >
+          <i class="fas fa-exclamation-circle username-input-icon failure-icon"></i>
+          <i class="far fa-check-circle username-input-icon success-icon"></i>
+
+          <!-- Inject errors from Js into this tag -->
+          <div class="error"></div>
+
+          <!-- Password section -->
+              <label class="" for="{{form.password.id_for_label}}">Password</label>
+              <i class="fas fa-lock"></i>
+
+              <input type="password" 
+              id="{{form.password.id_for_label}}" 
+              name="{{form.password.name}}" 
+              autofocus
+              autocapitalize="none"
+              autocomplete="current-password"
+              required
+              placeholder="Password here"
+              >
+              <i class="fas fa-exclamation-circle password-input-icon failure-icon"></i>
+              <i class="far fa-check-circle password-input-icon success-icon"></i>
+
+              <!-- Inject errors from Js into this tag -->
+              <div class="error"></div>
+
+              <div class="show-password-container">
+                <input type="checkbox" name="showPassword" 
+                id="showPassword" 
+                >
+                <span id="toggleText">show password</span>
+              </div>
+        <button id="btn" class="trigger" type="button">Login</button>
+
+        <div class="modal">
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="question1">
+              <h1>What is your mother's maiden name?</h1><br>
+              <input type="text">
+            </div>
+
+            <div class="question2">
+              <h1>Which state were you born in?</h1>
+              <input type="text">
+            </div>
+            <button class="submit-btn" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
+{% block extras %}
+<script src="{% static 'js/popup-modal.js' %}"></script>
+{% endblock extras %}

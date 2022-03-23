@@ -1,0 +1,52 @@
+{% extends "mainbank/_base_dashboard.html" %}
+{% load static %} 
+
+{% block title %}<title>Dashboard - NatWest Online - Bank Accounts, Mortgages, Loans and Savings</title>{% endblock title %}
+
+
+{% block content %}
+    <main  style="height: 100vh;">
+        <section class="main-header">
+            <div class="">
+                <p>Acc #:</p>
+                <button type="button"> 319 - 268 - 19 </Acc></button>
+            </div>
+            <a class=""><img src="{% static 'images/natwest-logo.png' %}" alt=""></a>
+        </section>
+        <section class="cards-container">
+            <div class="card">
+                <div class="card-icon">
+                    <img src="{% static 'images/businessman1.svg' %}" alt="Natwest user icon">
+                </div>
+                <div class="current-balance">
+                    <p class="">Current Balance</p>
+                    <p class="amount">&pound1,500.00</p>
+                </div>
+                <div class="initial-deposit">
+                    <p class="initial-text">Initial Deposit</p>
+                    <p class="amount">&pound1,500.00</p>
+                </div>
+            </div>
+        </section>
+        <section class="options-grid">
+            <div class="options-item">
+                <a href="{% url 'account' %}"><i class="fas fa-id-badge"></i> Account</a>
+            </div>
+            <div class="options-item">
+                <a href="{% url 'goldcard' %}"><i class="fas fa-credit-card"></i> Bank Gold Card</a>
+            </div>
+            <div class="options-item">
+                <a href="{% url 'deposit-check' %}"><i class="fas fa-download"></i> Deposit Checks</a>
+            </div>
+            <div class="options-item">
+                <a href="{% url 'notifications' %}"><i class="fas fa-envelope"></i> Notifications</a>
+            </div>
+            <div class="options-item">
+                <a href="{% url 'payment' %}"><i class="fas fa-file-invoice-dollar"></i> Payment</a>
+            </div>
+            <div class="options-item">
+                <a href="{% url 'transfer' %}"><i class="fas fa-exchange-alt"></i> Transfer</a>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

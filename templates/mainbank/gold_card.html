@@ -1,0 +1,26 @@
+{% extends "mainbank/_base_dashboard.html" %}
+{% load static %} 
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'css/goldcard.css' %}">
+{% endblock extracss %}
+
+{% block title %}<title>Gold Card -NatWest Online</title>{% endblock title %}
+
+
+{% block content %}
+    <main  style="height: 100vh;">
+        <div class="goldcard">
+            <p>Your Bank Gold Card is being processed...</p>
+        </div>
+        <div class="popup">
+            <p>
+                Status: Pending
+            </p>
+            <button id="close">&times;</button>
+        </div>
+    </main>
+{% endblock content %}
+{% block extrajs %}
+<script src="{% static 'js/goldCardPopup.js' %}"></script>
+{% endblock extrajs %}
