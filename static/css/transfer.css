@@ -13,13 +13,13 @@
 
 form {
     display: grid;
-    gap: 1rem;
+    gap: .5rem;
     margin: 0 8px;
     margin-bottom: 6rem;
 }
 label {
     color: #fff;
-    font-size: 14px;
+    font-size: 17px;
 }
 .transfer-type-container,
 .from-account-container,
@@ -34,7 +34,9 @@ select, input {
     padding: 7px;
 
 }
-
+select {
+    font-size: 17px;
+}
 /* Bank name section */
 .bank-container {
     display: none;
