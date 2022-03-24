@@ -16,7 +16,7 @@
             <h2>Transfer</h2>
         </div>
         <div class="">
-            <form action="" method="post">
+            <form action="{% url 'transfer' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="transfer-type-container">
                     <label for="transfer-type">Transfer Type</label>
@@ -49,28 +49,32 @@
                 <!-- For inputing acct # of a natwest acc -->
                 <div class="to-account-container">
                     <label for="to-account">To Account</label>
-                    <input type="number" name="to-account" id="to-own-acct" placeholder="enter recipient account number">
+                    {{transferform.to_account}}
                 </div>
 
                 <div class="to-account-container">
-                    <label for="to-account">Routing number</label>
-                    <input type="number" name="to-account" id="to-own-acct" placeholder="enter routing number">
+                    <label for="{{transferform.routing_number.name}}">Routing number</label>
+                    {{transferform.routing_number}}
                 </div>
 
                 <div class="amount-container">
-                    <label for="amount">Amount</label>
-                    <input type="number" name="amount" id="utility-amount" placeholder="Amount">
+                    <label for="{{transferform.amount.name}}">Amount</label>
+                    {{transferform.amount}}
                 </div>
 
-                <textarea name="" id="remarks" cols="30" rows="4" placeholder="Remarks"></textarea>
+                <textarea 
+                    name="" 
+                    id="remarks" 
+                    cols="30" rows="4" 
+                    placeholder="Remarks"
+                ></textarea>
 
                 <button class="continue" type="button">Continue</button>
                 <div class="popup-confirmation">
                     <div class="confirmation-message">
                         <span class="close-button">&times;</span>
                         <p>Do you want to continue the transfer?</p>
-                        <a href="{% url 'transfer-pending' %}"><button type="button" class="ok">Yes</button></a>
-                        
+                        <button type="submit" class="ok">Yes</button>                        
                     </div>
                 </div>
             </form>

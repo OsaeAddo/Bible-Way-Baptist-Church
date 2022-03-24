@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BankAccount, Customer
+from .models import BankAccount, Customer, Transfer
 # Register your models here.
 
 class BankAccountInline(admin.StackedInline):
@@ -11,3 +11,4 @@ class CustomerAdmin(admin.ModelAdmin):
     inlines = [BankAccountInline]
     list_display = ["user"]
 
+admin.site.register(Transfer)

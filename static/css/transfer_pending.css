@@ -3,12 +3,17 @@
     margin-top: 2rem;
     background: var(--text-white);
     color: #5c5858;
-    padding: 0.5rem 0rem;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     margin-right: 2rem;
     margin-left: 2rem;
-    font-weight: 600;
+    font-size: 15px;
     text-align: center;
+}
+
+.amnt-details {
+    font-weight: 600;
+    color: #000;
 }
 .popup {
     display: none;
@@ -19,7 +24,7 @@
     padding: 2rem 1rem;
     opacity: 1;
     transition: opacity 1s;
-    transform: translateX(2rem) translatey(3rem);
+    transform: translateX(1rem) translatey(3rem);
 }
 #close, 
 #ok {

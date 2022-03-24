@@ -11,14 +11,17 @@
 {% block content %}
     <main  style="height: 100vh;">
         <div class="pending-card">
-            <p>Kindly contact our Customer Care <br>to complete your transfer.</p>
+            <p>
+                Kindly contact our Customer Care <br>to complete your transfer of <span class="amnt-details" style="color: #000;">&pound;{{transfer.amount}}</span> 
+                to <span class="amnt-details" style="color: #000;">{{transfer.to_account}}</span>.
+            </p>
             <p>Thank you.</p>
         </div>
         <div class="popup">
             <button id="close">&times;</button>
             <div class="popup-text">
                 <p id="processing">Transfer Status: Processing</p>
-                <p id="customer-care">Kindly contact our Customer Care <br>to complete your transfer</p>
+                <p id="customer-care">Kindly contact our Customer Care <br>to complete your transfer.</p>
             </div>
             <button id="ok">Ok</button>
         </div>

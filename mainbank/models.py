@@ -24,3 +24,12 @@ class BankAccount(models.Model):
 
     def __str__(self):
         return f"{self.account_number}({self.customer.user.username})"
+
+
+class Transfer(models.Model):
+    amount = models.FloatField(default=0)
+    to_account = models.CharField(max_length=12, null=False, blank=False)
+    routing_number = models.CharField(max_length=9, null=False, blank=False)
+
+    def __str__(self):
+        return f"Transferring {self.amount} to {self.to_account}"

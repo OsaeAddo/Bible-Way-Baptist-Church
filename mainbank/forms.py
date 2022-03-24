@@ -1,3 +1,4 @@
+from pyexpat import model
 from django import forms
 from django.contrib.auth.models import User
 from . import models
@@ -23,3 +24,24 @@ class CustomerForm(forms.ModelForm):
         fields = [
             'mobile'
         ]
+
+
+class TransferForm(forms.ModelForm):
+    class Meta: 
+        model = models.Transfer
+        fields = [
+            'amount',
+            'to_account',
+            'routing_number'
+        ]
+        widgets = {
+            'amount': forms.TextInput(attrs={
+                'placeholder': 'amount',
+            }),
+            'to_account': forms.TextInput(attrs={
+                'placeholder': 'enter to account'
+            }),
+            'routing_number': forms.TextInput(attrs={
+                'placeholder': 'enter to routing number'
+            }),
+        }

@@ -2,8 +2,8 @@ from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
-from .forms import CustomerUserForm, CustomerForm
-from .models import BankAccount, Customer
+from .forms import CustomerUserForm, CustomerForm, TransferForm
+from .models import BankAccount, Customer, Transfer
 
 
 
@@ -12,8 +12,8 @@ def home(request):
 
 
 def customer_signup_view(request):
-    form = CustomerUserForm
-    customerForm = CustomerForm
+    form = CustomerUserForm()
+    customerForm = CustomerForm()
     context = {
         'form':form,
         'customerForm': customerForm
@@ -21,7 +21,7 @@ def customer_signup_view(request):
     if request.method == 'POST':
         form = CustomerUserForm(request.POST)
         customerForm = CustomerForm(request.POST)
-        if form.is_valid and customerForm.is_valid:
+        if form.is_valid() and customerForm.is_valid():
             form = form.save()
             form.set_password(form.password)
             form.save()
@@ -68,6 +68,7 @@ def customer_goldcard(request):
 @login_required(login_url="login")
 def customer_notifications(request):
     customer = Customer.objects.get(user_id=request.user.id)
+    transfer = Transfer.objects.filter(id=request.user.id)
     context = {
         'customer': customer,
     }
@@ -94,6 +95,7 @@ def payment(request):
 @login_required(login_url="login")
 def messages(request):
     customer = Customer.objects.get(user_id=request.user.id)
+    transfer = Transfer.objects.filter(id=request.user.id)
     context = {
         'customer': customer,
     }
@@ -103,6 +105,7 @@ def messages(request):
 @login_required(login_url="login")
 def transactions(request):
     customer = Customer.objects.get(user_id=request.user.id)
+    transfer = Transfer.objects.filter(id=request.user.id)
     context = {
         'customer': customer,
     }
@@ -112,6 +115,7 @@ def transactions(request):
 @login_required(login_url="login")
 def history(request):
     customer = Customer.objects.get(user_id=request.user.id)
+    transfer = Transfer.objects.filter(id=request.user.id)
     context = {
         'customer': customer,
     }
@@ -129,16 +133,28 @@ def settings(request):
 @login_required(login_url="login")
 def transfer(request):
     customer = Customer.objects.get(user_id=request.user.id)
+    transferform = TransferForm()
     context = {
         'customer': customer,
+        'transferform': transferform,
     }
+    if request.method == 'POST':
+        transferform = TransferForm(request.POST)
+        if transferform.is_valid():
+            transferform = transferform.save()
+            print('*************',request.user.id)
+        print("Before redirecting")
+        return redirect('transfer-pending')
+
     return render(request, 'mainbank/transfer.html', context)
 
 
 @login_required(login_url="login")
 def transfer_pending(request):
     customer = Customer.objects.get(user_id=request.user.id)
+    transfer = Transfer.objects.get(id=request.user.id)
     context = {
         'customer': customer,
+        'transfer': transfer,
     }
     return render(request, 'mainbank/transfer_pending.html', context)
