@@ -46,3 +46,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 8px;
 }
+.status-value {
+    font-weight: 600;
+}
