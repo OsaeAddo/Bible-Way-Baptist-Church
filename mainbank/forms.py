@@ -39,9 +39,9 @@ class TransferForm(forms.ModelForm):
                 'placeholder': 'amount',
             }),
             'to_account': forms.TextInput(attrs={
-                'placeholder': 'enter to account'
+                'placeholder': 'enter recipient account'
             }),
             'routing_number': forms.TextInput(attrs={
-                'placeholder': 'enter to routing number'
+                'placeholder': 'enter routing number'
             }),
         }

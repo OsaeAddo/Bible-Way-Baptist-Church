@@ -115,7 +115,7 @@ form .show-password-container #toggleText {
     padding-left: .25rem;
     color: var(--text-black);
 }
-form input:focus{
+.form-input-border:focus {
     border: 2px solid #f2796e;
 }
 /* Submit section */
@@ -148,13 +148,13 @@ form #btn {
     opacity: 0;
     visibility: hidden;
     transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    transition: visibility 0s linear 0.75s, opacity 0.75s 0s, transform 0.75s;
 }
 .modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
     background-color: white;
     padding: 1rem 1.5rem;
     width: 18rem;
@@ -181,9 +181,32 @@ form #btn {
     border-radius: 8px;
     font-size: 18px;
 }
+
+.disabled-submit-btn {
+    margin-top: 1rem;
+    background: gray;
+    padding: 7px 22px;
+    color: var(--text-white);
+    border: 0;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
 .show-modal{
     opacity: 1;
     visibility: visible;
     transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    transition: visibility 0s linear 0s, opacity 0.99s 0s, transform 0.99s;
+}
+.error-msg {
+    display: none;
+    color: red;
+}
+
+.green-border {
+    border: 2px solid green;
+}
+
+.red-border {
+    border: 2px solid red;
 }

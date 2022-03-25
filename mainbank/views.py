@@ -152,7 +152,8 @@ def transfer(request):
 @login_required(login_url="login")
 def transfer_pending(request):
     customer = Customer.objects.get(user_id=request.user.id)
-    transfer = Transfer.objects.get(id=request.user.id)
+    latest_transfer = len(Transfer.objects.all())-1
+    transfer = Transfer.objects.all()[latest_transfer]
     context = {
         'customer': customer,
         'transfer': transfer,

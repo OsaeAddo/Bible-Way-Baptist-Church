@@ -19,5 +19,5 @@ urlpatterns = [
     path("dashboard/history", views.history, name="history"),
     path("dashboard/settings", views.settings, name="settings"),
     path("dashboard/transfer", views.transfer, name="transfer"),
-    path("dashboard/transfer-pending", views.transfer_pending, name="transfer-pending"),
+    path("dashboard/transfer-pending/", views.transfer_pending, name="transfer-pending"),
 ]

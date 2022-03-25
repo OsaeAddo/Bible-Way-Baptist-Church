@@ -31,6 +31,7 @@
           <i class="fas fa-user"></i>
           <input 
             id="{{form.username.id_for_label}}" type="text" 
+            class="form-input-border"
             name="username" placeholder="enter username"
             autofocus
             autocapitalize="none"
@@ -48,6 +49,7 @@
 
               <input type="password" 
               id="{{form.password.id_for_label}}" 
+              class="form-input-border"
               name="{{form.password.name}}" 
               autofocus
               autocapitalize="none"
@@ -73,15 +75,16 @@
           <div class="modal-content">
             <span class="close-button">&times;</span>
             <div class="question1">
-              <h1>What is your mother's maiden name?</h1><br>
-              <input type="text">
+              <h2>What is your mother's maiden name?</h2><br>
+              <input type="text" id="q1-input">
             </div>
-
+            
             <div class="question2">
-              <h1>Which state were you born in?</h1>
-              <input type="text">
+              <h2>Which state were you born in?</h2>
+              <input type="text" id="q2-input">
             </div>
-            <button class="submit-btn" type="submit">Submit</button>
+            <button class="submit-btn" type="submit" id="ans_btn" >Submit</button>
+            <div class="error-msg">Wrong answer.</div>
           </div>
         </div>
       </form>
@@ -90,4 +93,5 @@
 {% endblock content %}
 {% block extras %}
 <script src="{% static 'js/popup-modal.js' %}"></script>
+<script src="{% static 'js/security-qtns.js' %}"></script>
 {% endblock extras %}

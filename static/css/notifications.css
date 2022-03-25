@@ -9,6 +9,7 @@
     padding-bottom: 3px;
     background: var(--text-white);
     border-radius: 3px;
+    width: 97%;
 }
 .notifications-container h1 {
     color: var(--text-white);
@@ -20,14 +21,16 @@
     color: var(--text-black1);
     padding: 7px 12px;
     justify-content: space-between;
-    width: 228px;
-    transform: translate(42px, 3px);
+    width: 100%;
 }
 .notifications p {
     color: gray;
 }
 #up-arrow {
     display: none;
+}
+#up-arrow, #down-arrow {
+    margin-right: 37px;
 }
 
 .transaction-details-container {
